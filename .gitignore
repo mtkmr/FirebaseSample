@@ -61,6 +61,9 @@ Pods/
 xcuserdata
 UserInterfaceState.xcuserstate
 
+# Firebase
+.firebase/
+
 # others
 *.swp
 !.gitkeep

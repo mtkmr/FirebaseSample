@@ -17,13 +17,17 @@ protocol WelcomePresenterInput {
 protocol WelcomePresenterOutput: AnyObject {
     func showRegister()
     func showPasswordSignIn()
+    func showPasswordLessSignIn()
+    func showDidSignIn()
 }
 
 final class WelcomePresenter {
     private var output: WelcomePresenterOutput!
+    private let authService: AuthServiceInput!
     
-    init(output: WelcomePresenterOutput) {
+    init(output: WelcomePresenterOutput, authService: AuthServiceInput = AuthService()) {
         self.output = output
+        self.authService = authService
     }
 }
 
@@ -31,6 +35,17 @@ extension WelcomePresenter: WelcomePresenterInput {
     
     func didTapAnonymousSignInButton() {
         //anonymous sign in
+        authService.anonymousSignIn(completion: { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let authResult):
+                guard let user = authResult?.user else { return }
+                UserDefaultsKey.signIn.set(value: true)
+                self?.output.showDidSignIn()
+            }
+            
+        })
     }
     
     func didTapRegisterButton() {
@@ -42,7 +57,7 @@ extension WelcomePresenter: WelcomePresenterInput {
     }
     
     func didTapSignInWithDynamicLinksButton() {
-        
+        output.showPasswordLessSignIn()
     }
     
     

@@ -98,5 +98,17 @@ extension WelcomeViewController: WelcomePresenterOutput {
         }
     }
     
+    func showPasswordLessSignIn() {
+        DispatchQueue.main.async {
+            Router.shared.showPasswordLessSignIn(from: self)
+        }
+    }
+    
+    func showDidSignIn() {
+        DispatchQueue.main.async {
+            Router.shared.showDidSignIn(from: self)
+        }
+    }
+    
     
 }

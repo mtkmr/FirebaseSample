@@ -28,9 +28,12 @@ final class PasswordSignInViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var sendButton: UIButton! {
+    @IBOutlet private weak var signInButton: UIButton! {
         didSet {
-            sendButton.addCornerRadius()
+            signInButton.addCornerRadius()
+            signInButton.addTarget(self,
+                                 action: #selector(didTapSignInButton(_:)),
+                                 for: .touchUpInside)
         }
     }
     
@@ -52,8 +55,29 @@ private extension PasswordSignInViewController {
     func didTapCloseButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func didTapSignInButton(_ sender: UIButton) {
+        passwordSignInPresenter.didTapSignInButton(email: emailTextField.text!,
+                                                   password: passwordTextField.text!)
+    }
 }
 
 extension PasswordSignInViewController: PasswordSignInPresenterOutput {
+    func showAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            Alert.okAlert(title: title,
+                          message: message,
+                          on: self,
+                          handler: { [weak self] ok in
+                            self?.passwordSignInPresenter.didTapOK()
+                          }
+            )
+        }
+    }
     
+    func showDidSignIn() {
+        DispatchQueue.main.async {
+            Router.shared.showDidSignIn(from: self)
+        }
+    }
 }

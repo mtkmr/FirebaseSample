@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class PasswordLessSignInViewController: UIViewController {
+final class EmailLinkSignInViewController: UIViewController {
     
-    private var passwordLessSignInPresenter: PasswordLessSignInPresenterInput!
-    func inject(presenter: PasswordLessSignInPresenterInput) {
+    private var passwordLessSignInPresenter: EmailLinkSignInPresenterInput!
+    func inject(presenter: EmailLinkSignInPresenterInput) {
         self.passwordLessSignInPresenter = presenter
     }
     
@@ -42,9 +42,9 @@ final class PasswordLessSignInViewController: UIViewController {
 }
 
 @objc
-private extension PasswordLessSignInViewController {
+private extension EmailLinkSignInViewController {
     func didTapSendButton(_ sender: UIButton) {
-        
+        passwordLessSignInPresenter.didTapSendButton(email: emailTextField.text!)
     }
     
     func didTapCloseButton(_ sender: UIButton) {
@@ -52,6 +52,26 @@ private extension PasswordLessSignInViewController {
     }
 }
 
-extension PasswordLessSignInViewController: PasswordLessSignInPresenterOutput {
+extension EmailLinkSignInViewController: EmailLinkSignInPresenterOutput {
+    func showAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            Alert.okCancelAlert(title: title,
+                                message: message,
+                                on: self,
+                                handler: { [weak self] OK in
+                                  self?.dismiss(animated: true, completion: nil)
+                                  self?.passwordLessSignInPresenter.didTapOK()
+                                  
+                                }
+            )
+        }
+    }
     
+    func openUrl(url: URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        } else {
+            print("メールアプリが開けません")
+        }
+    }
 }

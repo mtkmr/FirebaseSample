@@ -9,11 +9,14 @@ import Foundation
 
 protocol DidSignInPresenterInput {
     func didTapSignOutButton()
-    func didTapOK()
+    func didTapDeleteAccountButton()
+    func willSignOut()
+    func willDelete()
 }
 
 protocol DidSignInPresenterOutput: AnyObject {
-    func showAlert(title: String, message: String)
+    func showSignOutAlert(title: String, message: String)
+    func showDeleteAccountAlert(title: String, message: String)
     func showReset()
 }
 
@@ -30,10 +33,10 @@ final class DidSignInPresenter {
 extension DidSignInPresenter: DidSignInPresenterInput {
     
     func didTapSignOutButton() {
-        output.showAlert(title: "ログアウトしますか", message: "")
+        output.showSignOutAlert(title: "ログアウトしますか", message: "")
     }
     
-    func didTapOK() {
+    func willSignOut() {
         authService.signOut { [weak self] result in
             switch result {
             case .failure(let error):
@@ -44,6 +47,23 @@ extension DidSignInPresenter: DidSignInPresenterInput {
                 self?.output.showReset()
             }
         }
+    }
+    
+    func willDelete() {
+        authService.deleteAccount { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let message):
+                print(message)
+                UserDefaultsKey.signIn.remove()
+                self?.output.showReset()
+            }
+        }
+    }
+    
+    func didTapDeleteAccountButton() {
+        output.showDeleteAccountAlert(title: "アカウントを削除しますか", message: "")
     }
     
 }

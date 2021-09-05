@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C053A3826E2016F005AB235 /* PasswordLessSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C053A3726E2016F005AB235 /* PasswordLessSignIn.storyboard */; };
-		8C053A3A26E20186005AB235 /* PasswordLessSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C053A3926E20186005AB235 /* PasswordLessSignInViewController.swift */; };
-		8C053A3C26E20B6D005AB235 /* PasswordLessSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C053A3B26E20B6D005AB235 /* PasswordLessSignInPresenter.swift */; };
+		8C053A3826E2016F005AB235 /* EmailLinkSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C053A3726E2016F005AB235 /* EmailLinkSignIn.storyboard */; };
+		8C053A3A26E20186005AB235 /* EmailLinkSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C053A3926E20186005AB235 /* EmailLinkSignInViewController.swift */; };
+		8C053A3C26E20B6D005AB235 /* EmailLinkSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C053A3B26E20B6D005AB235 /* EmailLinkSignInPresenter.swift */; };
 		8C053A4526E21195005AB235 /* DidSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C053A4426E21195005AB235 /* DidSignIn.storyboard */; };
 		8C053A4926E212F6005AB235 /* DidSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C053A4826E212F6005AB235 /* DidSignInViewController.swift */; };
 		8C053A4B26E219D9005AB235 /* DidSignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C053A4A26E219D9005AB235 /* DidSignInPresenter.swift */; };
@@ -38,13 +38,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C053A3726E2016F005AB235 /* PasswordLessSignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordLessSignIn.storyboard; sourceTree = "<group>"; };
-		8C053A3926E20186005AB235 /* PasswordLessSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLessSignInViewController.swift; sourceTree = "<group>"; };
-		8C053A3B26E20B6D005AB235 /* PasswordLessSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLessSignInPresenter.swift; sourceTree = "<group>"; };
+		8C053A3726E2016F005AB235 /* EmailLinkSignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailLinkSignIn.storyboard; sourceTree = "<group>"; };
+		8C053A3926E20186005AB235 /* EmailLinkSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLinkSignInViewController.swift; sourceTree = "<group>"; };
+		8C053A3B26E20B6D005AB235 /* EmailLinkSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLinkSignInPresenter.swift; sourceTree = "<group>"; };
 		8C053A4426E21195005AB235 /* DidSignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DidSignIn.storyboard; sourceTree = "<group>"; };
 		8C053A4826E212F6005AB235 /* DidSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSignInViewController.swift; sourceTree = "<group>"; };
 		8C053A4A26E219D9005AB235 /* DidSignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSignInPresenter.swift; sourceTree = "<group>"; };
 		8C053A4D26E2838E005AB235 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		8C053A4F26E3B638005AB235 /* FirebaseSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseSample.entitlements; sourceTree = "<group>"; };
 		8C2D23EF26DE89B000E03238 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8C2D23F226DE8A9200E03238 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8C2D23F526DE8AB000E03238 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -111,14 +112,14 @@
 			path = PasswordSignIn;
 			sourceTree = "<group>";
 		};
-		8C053A4026E20FB3005AB235 /* PasswordLessSignIn */ = {
+		8C053A4026E20FB3005AB235 /* EmailLinkSignIn */ = {
 			isa = PBXGroup;
 			children = (
-				8C053A3726E2016F005AB235 /* PasswordLessSignIn.storyboard */,
-				8C053A3926E20186005AB235 /* PasswordLessSignInViewController.swift */,
-				8C053A3B26E20B6D005AB235 /* PasswordLessSignInPresenter.swift */,
+				8C053A3726E2016F005AB235 /* EmailLinkSignIn.storyboard */,
+				8C053A3926E20186005AB235 /* EmailLinkSignInViewController.swift */,
+				8C053A3B26E20B6D005AB235 /* EmailLinkSignInPresenter.swift */,
 			);
-			path = PasswordLessSignIn;
+			path = EmailLinkSignIn;
 			sourceTree = "<group>";
 		};
 		8C053A4126E20FC9005AB235 /* Extension */ = {
@@ -178,6 +179,7 @@
 		8C505FF326D5751E00022275 /* FirebaseSample */ = {
 			isa = PBXGroup;
 			children = (
+				8C053A4F26E3B638005AB235 /* FirebaseSample.entitlements */,
 				8C505FF426D5751E00022275 /* AppDelegate.swift */,
 				8C505FFD26D5752500022275 /* Assets.xcassets */,
 				8C505FFF26D5752500022275 /* LaunchScreen.storyboard */,
@@ -189,7 +191,7 @@
 				8C053A3D26E20F96005AB235 /* Welcome */,
 				8C053A3E26E20FA1005AB235 /* Register */,
 				8C053A3F26E20FA9005AB235 /* PasswordSignIn */,
-				8C053A4026E20FB3005AB235 /* PasswordLessSignIn */,
+				8C053A4026E20FB3005AB235 /* EmailLinkSignIn */,
 				8C053A4C26E21A68005AB235 /* DidSignIn */,
 			);
 			path = FirebaseSample;
@@ -259,7 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C053A3826E2016F005AB235 /* PasswordLessSignIn.storyboard in Resources */,
+				8C053A3826E2016F005AB235 /* EmailLinkSignIn.storyboard in Resources */,
 				8C50600126D5752500022275 /* LaunchScreen.storyboard in Resources */,
 				8C2D240826DEAD4100E03238 /* PasswordSignIn.storyboard in Resources */,
 				8C2D23F626DE8AB000E03238 /* Welcome.storyboard in Resources */,
@@ -278,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C053A4926E212F6005AB235 /* DidSignInViewController.swift in Sources */,
-				8C053A3C26E20B6D005AB235 /* PasswordLessSignInPresenter.swift in Sources */,
+				8C053A3C26E20B6D005AB235 /* EmailLinkSignInPresenter.swift in Sources */,
 				8C2D23F326DE8A9200E03238 /* WelcomeViewController.swift in Sources */,
 				8C2D241126DEB0E900E03238 /* UITextField+.swift in Sources */,
 				8C2D23FC26DEAA4400E03238 /* WelcomePresenter.swift in Sources */,
@@ -287,7 +289,7 @@
 				8C2D23F026DE89B000E03238 /* Router.swift in Sources */,
 				8C2D241B26DEB96E00E03238 /* AuthService.swift in Sources */,
 				8C2D241826DEB94400E03238 /* Alert.swift in Sources */,
-				8C053A3A26E20186005AB235 /* PasswordLessSignInViewController.swift in Sources */,
+				8C053A3A26E20186005AB235 /* EmailLinkSignInViewController.swift in Sources */,
 				8C2D240226DEAC8200E03238 /* RegisterViewController.swift in Sources */,
 				8C2D241526DEB4E900E03238 /* UIButton+.swift in Sources */,
 				8C505FF526D5751E00022275 /* AppDelegate.swift in Sources */,
@@ -433,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirebaseSample/FirebaseSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MGJDRSSSYP;
 				INFOPLIST_FILE = FirebaseSample/Info.plist;
@@ -452,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirebaseSample/FirebaseSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MGJDRSSSYP;
 				INFOPLIST_FILE = FirebaseSample/Info.plist;

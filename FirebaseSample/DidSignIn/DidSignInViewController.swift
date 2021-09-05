@@ -23,6 +23,15 @@ final class DidSignInViewController: UIViewController {
         }
     }
     
+    @IBOutlet private weak var deleteAccountButton: UIButton! {
+        didSet {
+            deleteAccountButton.addTarget(self,
+                                          action: #selector(didTapDeleteAccountButton(_:)),
+                                          for: .touchUpInside)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign In Success!"
@@ -40,17 +49,33 @@ private extension DidSignInViewController {
     func didTapSignOutButton(_ sender: UIButton) {
         didSignInPresenter.didTapSignOutButton()
     }
+    
+    func didTapDeleteAccountButton(_ sender: UIButton) {
+        didSignInPresenter.didTapDeleteAccountButton()
+    }
 }
 
 extension DidSignInViewController: DidSignInPresenterOutput {
     
-    func showAlert(title: String, message: String) {
+    func showSignOutAlert(title: String, message: String) {
         DispatchQueue.main.async {
             Alert.okCancelAlert(title: title,
                                 message: message,
                                 on: self,
-                                handler:  { [weak self] ok in
-                                  self?.didSignInPresenter.didTapOK()
+                                handler:  { [weak self] signOut in
+                                  self?.didSignInPresenter.willSignOut()
+                                }
+            )
+        }
+    }
+    
+    func showDeleteAccountAlert(title: String, message: String) {
+        DispatchQueue.main.async {
+            Alert.okCancelAlert(title: title,
+                                message: message,
+                                on: self,
+                                handler:  { [weak self] delete in
+                                  self?.didSignInPresenter.willDelete()
                                 }
             )
         }

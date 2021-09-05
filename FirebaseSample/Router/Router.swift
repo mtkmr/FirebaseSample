@@ -58,8 +58,8 @@ final class Router {
     }
     
     func showPasswordLessSignIn(from: UIViewController) {
-        let passwordLessVC = UIStoryboard(name: "PasswordLessSignIn", bundle: nil).instantiateInitialViewController() as! PasswordLessSignInViewController
-        let presenter = PasswordLessSignInPresenter(output: passwordLessVC)
+        let passwordLessVC = UIStoryboard(name: "EmailLinkSignIn", bundle: nil).instantiateInitialViewController() as! EmailLinkSignInViewController
+        let presenter = EmailLinkSignInPresenter(output: passwordLessVC)
         passwordLessVC.inject(presenter: presenter)
         show(from: from, to: UINavigationController(rootViewController: passwordLessVC))
     }

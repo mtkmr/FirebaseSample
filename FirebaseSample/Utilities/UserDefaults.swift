@@ -27,6 +27,7 @@ extension UserDefaultsProtocol {
 
 enum UserDefaultsKey: String {
     case signIn
+    case email
 }
 
 extension UserDefaultsKey: UserDefaultsProtocol {}

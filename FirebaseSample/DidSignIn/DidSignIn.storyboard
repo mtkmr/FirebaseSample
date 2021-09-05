@@ -28,15 +28,32 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzZ-y9-3Kb">
+                                <rect key="frame" x="107" y="568" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6ws-CY-Dd3"/>
+                                    <constraint firstAttribute="height" constant="40" id="AZC-X8-Q4n"/>
+                                    <constraint firstAttribute="width" constant="200" id="Muf-f8-P3L"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ZAX-aY-QzX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CWl-3d-rYz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="FQs-A7-WLb"/>
+                            <constraint firstItem="jzZ-y9-3Kb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Izi-5n-75Q"/>
                             <constraint firstItem="CWl-3d-rYz" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Tgx-eW-COq"/>
+                            <constraint firstItem="jzZ-y9-3Kb" firstAttribute="top" secondItem="CWl-3d-rYz" secondAttribute="bottom" constant="100" id="sh0-Hr-Sca"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteAccountButton" destination="jzZ-y9-3Kb" id="2FY-5y-aqo"/>
                         <outlet property="signOutButton" destination="CWl-3d-rYz" id="RdA-JK-G6t"/>
                     </connections>
                 </viewController>

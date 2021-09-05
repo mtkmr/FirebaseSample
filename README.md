@@ -5,6 +5,6 @@ A sample app using the Firebase Auth.
 ### Authentication
 - Email/Passsword sign in
 - Anonymous sign in
-- Dynamic Links sign in (Password Less)
+- Email Links sign in (Password Less)
 ### Extra
 - Firebase Hosting
